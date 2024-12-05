@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; 
+    background-color: #2b2827; 
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #533d3d;
+    border-radius: 4px;
+}
+
+
+.container {
+    margin-top: 20px;
+}
+
+.btn-login {
+    padding: 0.5rem 1.5rem;
+    background-color: #7a8599;
+    border-radius: 20px;
+    color: #dfe3e7;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #201d1d;
+  color:#111;
+}
+
+header {
+    background: #2b2827; /* Green background */
+    color: white; /* White text */
+    padding: 20px 0; /* Vertical padding */
+    text-align: center; /* Centered text */
+}
+
+.container {
+    max-width: 600px; /* Max width for the container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+    background: white; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 8px; /* Space below labels */
+    font-weight: 500; /* Medium weight font */
+}
+
+input[type="number"],
+select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    border: 1px solid #ebdcdc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio buttons */
+}
+
+button {
+    background-color: #2b2827; /* Green button */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+button:hover {
+    background-color: #2b2827; /* Darker green on hover */
+}
+
+.result {
+    margin-top: 20px; /* Space above results */
+    padding: 15px; /* Padding inside result divs */
+    background: #e7f9e7; /* Light green background */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #2b2827; /* Green border */
+}
+
+h1 {
+    margin-bottom: 20px; /* Space below the header */
+}
+
+fieldset {
+    border: none; /* Remove border */
+    margin-bottom: 20px; /* Space below fieldset */
+}
+
+legend {
+    font-weight: 500; /* Medium weight font */
+}

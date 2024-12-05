@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    background-color: #2b2827; /* Same background as header */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+/* Add some margin to the container to avoid overlap */
+.container {
+    margin-top: 20px;
+}
+.btn-login {
+    padding: 0.5rem 1.5rem;
+    background-color: #0e9492;
+    border-radius: 20px;
+    color: #111;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #fff;
+  color:#111;
+}
+
+header {
+    background: #2b2827;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #2b2827;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2b2827;
+}
+
+#meal-plan {
+    margin-top: 20px;
+}
+
+.meal-section {
+    margin-bottom: 20px;
+}
+
+.meal-item {
+    background: #e7f9e7;
+    border-radius: 4px;
+    border: 1px solid #2b2827;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+hr {
+    border: 1px solid #2b2827;
+}

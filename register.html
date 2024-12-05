@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fitAndThriveApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Fit&Thrive</title>
+    <style>
+        /* CSS sama seperti yang ada di kode sebelumnya */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .register-container .input-group {
+            margin-bottom: 20px;
+        }
+
+        .register-container .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .register-container .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .register-container .input-group input:focus {
+            border-color: #0072ff;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0072ff;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-container button:hover {
+            background-color: #005bb5;
+        }
+
+        .register-container .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-container .login-link a {
+            color: #0072ff;
+            text-decoration: none;
+        }
+
+        .register-container .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body ng-controller="RegisterController">
+
+    <div class="register-container">
+        <h2>Create Your Account</h2>
+        <form ng-submit="registerUser()">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" ng-model="user.name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" ng-model="user.email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" ng-model="user.password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" ng-model="user.confirmPassword" required>
+            </div>
+            <button type="submit">Register</button>
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </form>
+        <p style="color: red;" ng-show="errorMessage">{{ errorMessage }}</p>
+    </div>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        // AngularJS Module
+        var app = angular.module('fitAndThriveApp', []);
+
+        // Register Controller
+        app.controller('RegisterController', function ($scope, $http) {
+            $scope.user = {};
+            $scope.errorMessage = '';
+
+            $scope.registerUser = function () {
+                if ($scope.user.password !== $scope.user.confirmPassword) {
+                    $scope.errorMessage = 'Passwords do not match!';
+                    return;
+                }
+
+                $http.post('http://localhost:8000/api/register', $scope.user)
+                    .then(function (response) {
+                        alert('Registration successful!');
+                        window.location.href = 'login.html'; // Redirect to login page
+                    })
+                    .catch(function (error) {
+                        $scope.errorMessage = error.data.error || 'Registration failed!';
+                    });
+            };
+        });
+    </script>
+</body>
+</html>

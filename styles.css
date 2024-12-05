@@ -1,0 +1,570 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #0072ff;
+    color: white;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #0fdbd9;
+    transition: color 0.3s ease;
+}
+html{
+    font-size: 100%;
+    overflow-x: hideen;
+    scroll-behavior: smooth;}
+a:hover {
+    color: #fff;
+}
+
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.scrolled {
+    background-color: #000; /* Solid background when scrolling */
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-login {
+    padding: 0.5rem 1.5rem;
+    background-color: #0fdbd9;
+    border-radius: 20px;
+    color: #111;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #fff;
+  color:#111;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #0fdbd9, #111);
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 0.75rem 2rem;
+    background-color: #fff;
+    color: #111;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0fdbd9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0fdbd9;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.feature-icon-bmi {
+    width: 180px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.feature-icon-meal {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0fdbd9;
+}
+
+.feature p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.app-link {
+    display: inline-block;
+    background-color: #0fdbd9;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.app-link:hover {
+    background-color: #0bb5b3;
+}
+
+/* Footer Styling */
+footer {
+    padding: 1rem;
+    background-color: #000;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+.hero-section {
+    position: relative;
+    background-image: url('image/Fitness.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 20px;
+}
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
+
+.footer-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0fdbd9;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #aaa;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.socials li a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.socials li a:hover {
+    color: #0fdbd9;
+}
+
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    margin: 0;
+  color: #777;
+}
+/* About Section */
+.about-section {
+    background-image: url('image/about.jpg'); /* Ganti dengan URL gambar pilihan Anda */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.about-section .about-content {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang semi-transparent */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0fdbd9; /* Warna utama yang konsisten dengan tema */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-section .cta-button {
+    background-color: #0fdbd9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.about-section .cta-button:hover {
+    background-color: #0bb5b3;
+}
+/* Gallery Section */
+.gallery-section {
+    padding: 60px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0fdbd9;
+    text-align: center;
+}
+/* Goals Section */
+.goals-section {
+    padding: 60px 20px;
+    background-color: #fff; /* Warna latar belakang putih */
+    text-align: center;
+}
+
+.goals-container {
+    display: flex;
+    flex-wrap: wrap; /* Membuat item bisa dibungkus */
+    justify-content: center; /* Menyejajarkan item di tengah */
+}
+
+.goal {
+    flex: 1 1 250px; /* Membuat setiap goal item responsif */
+    margin: 10px; /* Margin antar goal */
+    padding: 20px;
+    border: 1px solid #ccc; /* Border untuk membedakan setiap goal */
+    border-radius: 10px; /* Sudut melengkung untuk setiap goal */
+    transition: box-shadow 0.3s ease; /* Transisi untuk efek hover */
+    position: relative; /* Mengatur posisi relatif untuk child absolute */
+}
+
+.goal:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan saat hover */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0fdbd9; /* Biru muda untuk judul section */
+}
+
+/* Warna untuk judul dan deskripsi goal */
+.goal h3 {
+    color: #0fdbd9; /* Biru muda untuk judul setiap goal */
+    position: relative; /* Mengatur posisi relatif untuk child */
+    padding-left: 20px; /* Memberi ruang untuk garis */
+}
+
+.goal h3::before { /* Mengubah dari ::after ke ::before */
+    content: ""; /* Elemen kosong */
+    display: inline-block; /* Mengubah tampilan menjadi inline-block */
+    width: 2px; /* Lebar garis */
+    height: 20px; /* Tinggi garis */
+    background-color: #0fdbd9; /* Warna garis biru muda */
+    position: absolute; /* Posisi absolute untuk penempatan */
+    left: 0; /* Menempatkan garis di sebelah kiri */
+    top: 50%; /* Menyejajarkan garis di tengah vertikal */
+    transform: translateY(-50%); /* Menyesuaikan posisi garis */
+}
+
+.goal p {
+    color: #333; /* Warna gelap untuk deskripsi, Anda bisa mengubahnya sesuai keinginan */
+}
+
+
+
+.track-everywhere-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Background putih */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.main-image {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Spasi di bawah gambar */
+}
+
+.description {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.category-links {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Pusatkan tautan */
+}
+
+.category-links a {
+    background-color: #0b0d0f; /* Warna latar tautan */
+    color: white; /* Warna teks tautan */
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px; /* Sudut membulat pada tautan */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Animasi transisi */
+}
+
+.category-links a:hover {
+    background-color: #4b0fe4; /* Warna latar saat hover */
+}
+
+.popup-modal {
+    display: none; /* Sembunyikan pop-up secara default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap */
+}
+
+.popup-content {
+    position: relative;
+    margin: 15% auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px; /* Lebar maksimal */
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.slider {
+    position: relative;
+    max-width: 100%; /* Maksimal lebar slider */
+    margin: auto; /* Pusatkan slider */
+}
+
+.slides {
+    display: flex; /* Susun gambar secara horizontal */
+    transition: transform 0.5s ease; /* Transisi halus saat berpindah slide */
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    flex: 0 0 100%; /* Pastikan setiap gambar memenuhi lebar kontainer */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.prev {
+    left: 10px; /* Posisi tombol kiri */
+}
+
+.next {
+    right: 10px; /* Posisi tombol kanan */
+}
