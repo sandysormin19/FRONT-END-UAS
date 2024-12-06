@@ -32,6 +32,9 @@ angular.module('evoltActiveApp', [])
       })
         .then(function(response) {
           alert('Profile updated successfully!');
+
+          localStorage.removeItem('name');
+          localStorage.setItem('name', $scope.user.name);
         })
         .catch(function(error) {
           console.error('Error updating profile:', error);
