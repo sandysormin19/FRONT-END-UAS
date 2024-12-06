@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body ng-controller="DashboardController">
 <!-- Header -->
@@ -17,8 +19,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#progress">My Progress</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#mealplan">Meal Plan</a></li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Hi, {{ savedName || 'Guest' }}!
@@ -36,6 +37,35 @@
 <!-- Products Section -->
 <section id="products" class="container my-5" ng-if="isAuthenticated">
     <h2 class="text-center mb-4">Manage Products</h2>
+   
+    <div class="d-flex justify-content-between mb-3">
+        <!-- Search -->
+        <div class="input-group w-50">
+            <input type="text" class="form-control" ng-model="searchQuery" placeholder="Search products...">
+            <select class="form-select" ng-model="searchBy">
+                <option value="name">Name</option>
+                <option value="category">Category</option>
+                <option value="description">Description</option>
+            </select>
+        </div>
+    
+        <!-- Sort -->
+        <div>
+            <label for="sortKey" class="form-label me-2">Sort by:</label>
+            <select class="form-select d-inline w-auto" ng-model="sortKey" id="sortKey">
+                <option value="name">Name</option>
+                <option value="category">Category</option>
+                <option value="price">Price</option>
+                <option value="stock">Stock</option>
+            </select>
+            <button class="btn btn-secondary ms-2" ng-click="sortReverse = !sortReverse">
+                <i class="bi" ng-class="{'bi-arrow-up': !sortReverse, 'bi-arrow-down': sortReverse}"></i>
+            </button>
+        </div>
+    </div>
+    
+    
+    </div>
     <!-- Button to trigger modal -->
     <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addProductModal">
         Add Product
@@ -132,7 +162,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="product in products">
+            <tr ng-repeat="product in products | filter:{[searchBy]: searchQuery} | orderBy:sortKey:sortReverse">
+
+
             <td>{{ product.image_url }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
